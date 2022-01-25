@@ -3,6 +3,11 @@
 		"ostream": "cpp",
 		"random": "cpp",
 		"limits": "cpp",
-		"algorithm": "cpp"
+		"algorithm": "cpp",
+		"array": "cpp",
+		"string_view": "cpp",
+		"initializer_list": "cpp",
+		"utility": "cpp",
+		"optional": "cpp"
 	}
 }
