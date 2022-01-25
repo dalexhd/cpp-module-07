@@ -6,7 +6,7 @@
 /*   By: aborboll <aborboll@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 17:44:15 by aborboll          #+#    #+#             */
-/*   Updated: 2021/12/13 19:41:05 by aborboll         ###   ########.fr       */
+/*   Updated: 2022/01/25 16:04:47 by aborboll         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <Array.hpp>
 
 #define MAX_VAL 750
+#define MIN_VAL 30
 int main(int, char**)
 {
 	Array<int> numbers(MAX_VAL);
@@ -61,5 +62,24 @@ int main(int, char**)
 		numbers[i] = rand();
 	}
 	delete [] mirror;//
+
+
+	Array<int> numberstest(MIN_VAL);
+	for (size_t i = 0; i <= MIN_VAL; i++)
+	{
+		try
+		{
+			numberstest[i] = MIN_VAL- i;
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << "This error is caused because we are trying to set index 30! " << e.what() << '\n';
+		}
+	}
+
+	for (size_t i = 0; i < MIN_VAL; i++)
+	{
+		std::cout << "Value of numberstest[" << i << "] is: " << numberstest[i] << std::endl;
+	}
 	return (0);
 }
